@@ -1,1 +1,3 @@
-안녕하세요 저는 한동대학교에 재학 중인 백 윤 정 입니다. 
+Name: Yunjeong Baek
+Born: 1993
+Hometown: Ilsan

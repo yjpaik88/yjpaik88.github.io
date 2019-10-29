@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Starbucks', 'Twosome Place', 'Ediya Coffee'],
+          ['2013', 3910, 1300, 78],
+          ['2014', 4822, 1607, 130],
+          ['2015', 6171, 1800, 163],
+          ['2016', 7739, 2000, 158]
+        ]);
+        var view = new google.visualization.DataView(data);
+          view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2,
+                       { calc: "stringify",
+                         sourceColumn: 2,
+                         type: "string",
+                         role: "annotation" },
+                       3,
+                       { calc: "stringify",
+                         sourceColumn: 3,
+                         type: "string",
+                         role: "annotation" },]);
+        var options1 = {
+          title: 'Company Profit',
+          vAxis: {
+            title: 'Volume (KRW, 100 million)'
+          },
+          hAxis: {
+            title: 'Year'
+          },
+          legend: {
+            position: 'bottom'
+          }
+        };
+       
+        var chart1 = new google.visualization.ColumnChart(document.getElementById('chart_div1'));
+        chart1.draw(view, options1);
+     
+      }
+    </script>
+  </head>
+  <body>
+    <div id="introduction" style="max-width: 800px; font-family: Verdana, Dotum; margin: auto; padding-bottom: 30px">
+      <h1>Sales by cafe brand </h1>
+      <p>date: 2019-10-10</p>
+      <p>name: 백윤정 (21400359) </p>
+      <p>Introduction: This chart shows sales by cafe brad by 2013 to 2016.</p>
+      <p>Data: The data is based on the news and helps you compare the sales per cafe by year, 2013 to 2016.
+                    <p> ref : https://m.blog.naver.com/PostView.nhn?blogId=eunyoungpc&logNo=221277184965&proxyReferer=https%3A%2F%2Fwww.google.com%2F
+                          http://bapsangnews.com/post/58edbfd8671b6ab976d02ac5
+                          https://m.mt.co.kr/renew/view.html?no=2016061611274262511&NG3#_enliple </p>
+
+
+
+      </p>
+      <p>Source code of this page: https://github.com/HandongHCI/HandongHCI.github.io/blob/master/Courses/BarChartExample.html<p>
+    </div>
+    <div id="chart_div1" style="max-width: 1200px; margin: auto; width: 1200px; height: 500px;"></div>
+
+  </body>
+</html>

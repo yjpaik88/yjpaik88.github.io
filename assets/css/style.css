@@ -1,3 +1,4 @@
+/*index.html*/
 .profile-info {
     padding: 20px;
 }
@@ -45,6 +46,11 @@
     padding: 10px;
     background-color: #ebebeb;
     margin-top: 20px;
+}
+
+/*qna_list.html*/
+.qna-list-form input{
+    display: inline-block;
 }
 
 /*

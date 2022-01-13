@@ -4,8 +4,8 @@
 .profile-name {
     font-size: 20px;
     font-weight: bold;
+    padding: 5px;
     margin: 2px;
-
 }
 
 .profile-explain{
@@ -29,7 +29,6 @@
     background-color: #ebebeb;
     font-size: 18px;
     padding: 8px 0;
-
 }
 
 .profile-container li {
@@ -37,5 +36,30 @@
 }
 
 .information {
-    margin-bottom: 5px;
+    margin-bottom: 10x;
 }
+
+.contact {
+    display: inline-block;
+    width: 230px;
+    padding: 10px;
+    background-color: #ebebeb;
+    margin-top: 20px;
+}
+
+/*
+.back-home {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.back-home img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+*/

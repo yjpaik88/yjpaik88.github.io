@@ -3,11 +3,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>QnA Form</title>
 </head>
 <body>
-    <h2>문의 작성</h2>
+<div class="back-home">
+    <div class="back-home-img">
+        <a href="qna_list.html">
+            <img width="50px" height="50px" src="assets/images/back.png">
+        </a>
+        <a href="index.html">
+            <img width="50px" height="50px" src="assets/images/home.png">
+        </a>    
+    </div>
+</div>
+<br>
+<br>
 
-
+<div class="qna-form-container">
+    <form action="qna_detail.html" id="qna_save">
+        <button>문의 제목</button> <br>
+        <textarea name="qna_title" cols="60" rows="1" required="required" placeholder="제목을 입력해주세요"> </textarea> <br>
+        <br>
+        <button> 문의 내용 </button> <br>
+        <textarea name="qna_content" cols="60" rows="20" required="required" placeholder="내용을 입력해주세요"></textarea> <br><br>
+        <button type="submit" form="qna_save">등록</button>
+    </form>
+</div>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>글 등록 페이지</h1>
+    <div>
+        <div>
+            <label for="title_input">제목</label>
+            <input type="text" id="title_input">
+        </div>
+        <div>
+            <label for="content_input">내용</label>
+            <input type="text" id="content_input">
+        </div>
+        
+            
+    </div>
+    <div>
+        <button id="add_button">글쓰기</button>
+    </div>
+
+    <div>
+        <a href="./list.html">목록으로</a>
+    </div>
+
+    <script>
+        const title_input = document.getElementById('title_input');
+        const content_input = document.getElementById('content_input');
+        const add_button = document.getElementById('add_button');
+        add_button.addEventListener('click', function(){
+            const title = title_input.value;
+            const content = content_input.value;
+            const post = {
+            
+                title, content, author:'백윤정'
+            };
+            localStorage.setItem('post', JSON.stringify(post));
+            alert("내 맘속에 저장!");
+            location.href = "list.html";
+
+        });
+    </script>
+
+</body>
+</html>

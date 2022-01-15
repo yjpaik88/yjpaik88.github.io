@@ -71,7 +71,7 @@
 */
 
 .qna-list-form{
-    max-width: 600px;
+    width: 600px;
     padding-bottom: 30px;
 }
 
@@ -80,9 +80,15 @@
 }
 
 .qna-list-table{
-    display: table-header-group;
-    max-width: 600px;
+    width: 600px;
     vertical-align: middle;
     border-color: #ebebeb;
 }
 
+.qna-list-table td a {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 370px;
+}

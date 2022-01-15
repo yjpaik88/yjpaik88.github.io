@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Alert</title>
+</head>
+<body>
+    <form action="test2.html" method="post" id="qna_detail.html">
+        <label>제목</label> <br>
+        <textarea id="title" cols="60" rows="1" required="required"></textarea>
+        <br>
+        
+        <label>내용</label> <br>
+        <textarea id="content" cols="60" rows="10" required="required"></textarea>
+
+        <button onclick="apply()">등록하기</button>
+
+ 
+    <script>
+
+        function apply(){
+            window.alert("제목:"+title +"내용:"+content);
+            const title = document.getElementById('title');
+            const content =document.getElementById('content');
+        }
+
+    </script>
+
+
+</body>
+</html>

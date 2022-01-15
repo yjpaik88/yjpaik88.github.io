@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,23 +7,39 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>QnA Detail</title>
 </head>
+
 <body>
 
-    <div class="back-home"> 
-        <a href="javascript:history.back();">
+    <div class="back-home">
+        <a href="qna_list.html">
             <img width="50px" height="50px" src="assets/images/back.png">
         </a>
         <a href="index.html">
             <img width="50px" height="50px" src="assets/images/home.png">
         </a>
     </div>
-    <br>
-    <br>
-
     <div>
-        <button>문의 제목</button>
-        <textarea name="qna_title" cols="60" rows="1"></textarea>
+        <label>문의 제목</label>
+        <div id="title"></div>
+        <label>문의 내용</label>
+        <div id="content"></div>
     </div>
-    
+    <script>
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+
+        const ajax = new XMLHttpRequest();
+        ajax.onload = function () {
+            const post = JSON.parse(ajax.response);
+            const titleDiv = document.getElementById('title');
+            titleDiv.innerHTML = post.title;
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = post.body;
+        }
+        ajax.open('get', `https://jsonplaceholder.typicode.com/posts/${params.id}`);
+
+        ajax.send();
+    </script>
 </body>
+
 </html>

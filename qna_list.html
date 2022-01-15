@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,52 +7,76 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>QnA List</title>
 </head>
+
 <body>
     <div class="qna-list-container">
         <div class="qna-list-form">
-            <script type="text/javascript">
-                function goBack(){
-                    window.history.back();
-                }
-            </script>
             <a href="#" onclick="goBack()" class="back-home-img">
                 <img width="50px" height="50px" src="assets/images/back.png">
             </a>
-
-
             <a href="index.html" class="back-home-img">
                 <img width="50px" height="50px" src="assets/images/home.png">
             </a>
-
             <a href="qna_form.html" class="qna-form-button">
                 <input type="button" value="문의작성">
             </a>
         </div>
-
-        <div class="qna-list-table">
-            <table width="100%">
-                <colgroup> 
-                    <col style="width: 10%;">
-                    <col style="width: 60%;">
-                    <col style="width: 20%;">
-                    <col style="width: 10%;">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th scope="row"> 글 번호 </th>
-                        <th scope="row"> 제목 </th>
-                        <th scope="row"> 작성일 </th>
-                        <th scope="row"> 답변 여부 </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!--while문으로 최근 글 순서대로 가져오기?-->
-                </tbody>
-            </table>
-        </div>
+        <table class="qna-list-table">
+            <colgroup>
+                <col width="10%">
+                <col width="60%">
+                <col width="15%">
+                <col width="15%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>글 번호</th>
+                    <th>제목</th>
+                    <th>작성일</th>
+                    <th>답변 여부</th>
+                </tr>
+            </thead>
+            <tbody id="qna_tbody">
+            </tbody>
+        </table>
     </div>
-    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
 
+        const ajax = new XMLHttpRequest();
+        ajax.onload = function () {
+            const posts = JSON.parse(ajax.response);
+            const qna_tbody = document.getElementById('qna_tbody');
+            for (const post of posts) {
+                const tr = document.createElement('tr');
 
+                const id = document.createElement('td');
+                id.innerHTML = post.id;
+
+                const title = document.createElement('td');
+                const titleLink = document.createElement('a');
+                titleLink.innerHTML = post.title;
+                titleLink.setAttribute('href', `qna_detail.html?id=${post.id}`);
+                title.appendChild(titleLink);
+
+                tr.appendChild(id);
+                tr.appendChild(title);
+
+                const createAt = document.createElement('td');
+                const answerYn = document.createElement('td');
+
+                tr.appendChild(createAt);
+                tr.appendChild(answerYn);
+
+                qna_tbody.appendChild(tr);
+            }
+        }
+        ajax.open('get', 'https://jsonplaceholder.typicode.com/posts');
+
+        ajax.send();
+    </script>
 </body>
+
 </html>

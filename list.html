@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>목록 페이지</h1>
+    <div class="top-botton-group">
+        <button id="add_button">글쓰기</button>
+        <button id="remove_button">삭제하기</button>
+        <button id="update_button">수정하기</button>
+    </div>
+    <ul id="post_list_container"></ul>
+
+    <script>
+        //저장하기
+        const add_button = document.getElementById('add_button');
+        add_button.addEventListener('click', function(){
+            location.href = "form.html";
+        });
+
+        const update_button = document.getElementById('update_button');
+        update_button.addEventListener('click', function(){
+            location.href = "update.html";
+        });
+
+        //삭제하기
+        const remove_button = document.getElementById('remove_button');
+        remove_button.addEventListener('click', function(){
+            localStorage.removeItem('post');
+            loadPost();
+        });
+
+        //글불러오기
+        function loadPost(){
+            const post = localStorage.getItem('post');
+            document.getElementById('post_list_container').innerHTML = post;
+        }
+        //초기함수 init
+        loadPost();
+    </script>
+
+</body>
+
+</html>

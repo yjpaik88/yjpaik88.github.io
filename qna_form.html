@@ -8,27 +8,34 @@
 </head>
 <body>
 <div class="back-home">
-    <div class="back-home-img">
-        <a href="qna_list.html">
+        <script>
+            function goBack(){
+                window.history.back();
+            }
+        </script>
+        <a href="#" onclick="goBack()" class="back-home-img">
             <img width="50px" height="50px" src="assets/images/back.png">
         </a>
-        <a href="index.html">
+        <a href="index.html" class="back-home-img">
             <img width="50px" height="50px" src="assets/images/home.png">
         </a>    
-    </div>
 </div>
 <br>
 <br>
 
 <div class="qna-form-container">
-    <form action="qna_detail.html" id="qna_save">
+    <form action="qna_detail.html" method="post" id="qna_save">
         <button>문의 제목</button> <br>
-        <textarea name="qna_title" cols="60" rows="1" required="required" placeholder="제목을 입력해주세요"></textarea> <br>
+        <textarea name="qna_title" cols="60" rows="1" required="required" placeholder="제목을 입력해주세요" style="resize: none;"></textarea> <br>
         <br>
         <button> 문의 내용 </button> <br>
-        <textarea name="qna_content" cols="60" rows="20" required="required" placeholder="내용을 입력해주세요"></textarea> <br><br>
+        <textarea name="qna_content" cols="60" rows="20" required="required" placeholder="내용을 입력해주세요" style="resize: none;"></textarea> <br><br>
         <button type="submit" form="qna_save">등록</button>
     </form>
+ 
+    <script>
+        
+    </script>
         
 </div>
 </body>

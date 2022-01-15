@@ -69,3 +69,20 @@
     object-fit: cover;
 }
 */
+
+.qna-list-form{
+    max-width: 600px;
+    padding-bottom: 30px;
+}
+
+.qna-form-button{
+    float: right;
+}
+
+.qna-list-table{
+    display: table-header-group;
+    max-width: 600px;
+    vertical-align: middle;
+    border-color: #ebebeb;
+}
+

@@ -7,14 +7,50 @@
     <title>QnA List</title>
 </head>
 <body>
-    <div class="qna-list-form">
-        <a href="qna_form.html">
-        <input type="button" value="문의작성">
-        </a>
+    <div class="qna-list-container">
+        <div class="qna-list-form">
+            <script type="text/javascript">
+                function goBack(){
+                    window.history.back();
+                }
+            </script>
+            <a href="#" onclick="goBack()" class="back-home-img">
+                <img width="50px" height="50px" src="assets/images/back.png">
+            </a>
+
+
+            <a href="index.html" class="back-home-img">
+                <img width="50px" height="50px" src="assets/images/home.png">
+            </a>
+
+            <a href="qna_form.html" class="qna-form-button">
+                <input type="button" value="문의작성">
+            </a>
+        </div>
+
+        <div class="qna-list-table">
+            <table width="100%">
+                <colgroup> 
+                    <col style="width: 10%;">
+                    <col style="width: 60%;">
+                    <col style="width: 20%;">
+                    <col style="width: 10%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="row"> 글 번호 </th>
+                        <th scope="row"> 제목 </th>
+                        <th scope="row"> 작성일 </th>
+                        <th scope="row"> 답변 여부 </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--while문으로 최근 글 순서대로 가져오기?-->
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div>
-<!--list 불러오기 for문으로 + list style-type: 사용-->
-    </div>
+    
 
 
 </body>
